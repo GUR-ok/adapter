@@ -12,6 +12,11 @@ spring:
     name: adapter
   main:
     banner-mode: off
+  data:
+    mongodb:
+      host: ${SPRING_DATA_MONGODB_HOST:localhost}
+      port: 27017
+      database: mydatabase
 
 logging:
   level:

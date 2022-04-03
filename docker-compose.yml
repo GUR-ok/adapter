@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  app:
+    image: 'adapter-img'
+    build:
+      context: .
+    container_name: adapter-app
+    depends_on:
+      - mongodb
+    ports:
+      - "8082:8080"
+    environment:
+      - SPRING_DATA_MONGODB_HOST=mongodb
+
+  mongodb:
+    image: "mongo:latest"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=
+      - MONGO_INITDB_ROOT_PASSWORD=
+    ports:
+      - "27018:27017"
+    volumes:
+      - mongodb_data_container:/data/db
+volumes:
+  mongodb_data_container:
