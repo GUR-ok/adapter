@@ -1,0 +1,20 @@
+server:
+  servlet:
+    context-path: /api/v1
+  port: 8080
+
+management:
+  server:
+    port: 9090
+
+spring:
+  application:
+    name: adapter
+  main:
+    banner-mode: off
+
+logging:
+  level:
+    root: ERROR
+    org.springframework: ERROR
+    ru.gurok.adapter: INFO
